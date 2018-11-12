@@ -1,6 +1,6 @@
 {
   "name": "@meatpie/node-bin",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "",
   "main": "./bin/nodeBin.js",
   "bin": "./bin/nodeBin.js",
