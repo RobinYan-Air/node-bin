@@ -21,7 +21,7 @@ yargs
   //   require('../lib/startUp/nodemon');
   // })
   .command('dev', 'Run the dev server', (argv) => {
-    require('../lib/start')(argv);
+    require('../lib/nodemon')(argv);
   })
   // .command('start', 'start the server', (argv) => {
   //   // const cmd = `node ${path.resolve(__dirname, '../lib/startUp/server')}`;
