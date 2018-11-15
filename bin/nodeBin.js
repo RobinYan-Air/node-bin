@@ -13,6 +13,9 @@ yargs
   .command('dev', 'Run the dev server', (argv) => {
     require('../lib/nodemon')(argv);
   })
+  .command('debug', 'Debug node server', (argv) => {
+    require('../lib/debug')(argv)
+  })
   .command('start', 'Start the server', (argv) => {
     require('../lib/start')(argv);
   })
