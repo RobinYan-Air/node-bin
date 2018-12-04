@@ -11,7 +11,7 @@ const { version } = require('../package.json');
 yargs
   .version(version)
   .command('dev', 'Run the dev server', (argv) => {
-    require('../lib/nodemon')(argv);
+    require('../lib/dev')(argv);
   })
   .command('debug', 'Debug node server', (argv) => {
     require('../lib/debug')(argv)
