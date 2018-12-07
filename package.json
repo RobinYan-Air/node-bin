@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "tc": "jest --coverage"
   },
   "repository": {
     "type": "git",
