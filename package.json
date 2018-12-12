@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-cache",
+    "tw": "jest --watch",
     "tc": "jest --coverage"
   },
   "repository": {
