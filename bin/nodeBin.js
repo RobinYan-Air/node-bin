@@ -19,4 +19,10 @@ yargs
   .command('start', 'Start the server', (argv) => {
     require('../lib/start')(argv);
   })
+  .command('featureDev', 'debug node server for feature developer', (argv) => {
+    require('../lib/featureDev')(argv);
+  })
+  .command('prepareFeatureDev', 'debug node server for feature developer', (argv) => {
+    require('../lib/prepareFeature')(argv);
+  })
   .argv;
