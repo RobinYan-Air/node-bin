@@ -3,7 +3,10 @@
   "version": "0.2.3",
   "description": "",
   "main": "./bin/nodeBin.js",
-  "bin": "./bin/nodeBin.js",
+  "bin": {
+    "node-bin": "./bin/nodeBin.js",
+    "node-bin-feature": "./lib/sh/featureDevelopment.sh"
+  },
   "directories": {
     "lib": "lib"
   },
