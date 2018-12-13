@@ -59,7 +59,7 @@ RunProxy () {
 
   echo 'Starting debug at another terminal...'
   sleep 5
-  yarn debug
+  yarn featureDev
   kill -9 $(lsof -ti tcp:5432)
 }
 
