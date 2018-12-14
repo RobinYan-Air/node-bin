@@ -6,7 +6,7 @@ AWX_DEPLOYMENT_PATH=${__AWX_DEPLOYMENT_PATH__}
 ProjectCloned () {
   printf "\n"
   read -p "Please enter the path to project airwallex-deployments:" projectPath
-  if [ -f "${projectPath}/awx" ] 
+  if [ -f "${projectPath}/awx" ]
   then
     echo "export __AWX_DEPLOYMENT_PATH__=\"${projectPath}\"" >> ${HOME}/.bash_profile
     source ${HOME}/.bash_profile
@@ -23,15 +23,15 @@ ProjectNotCloned () {
 
 NoPathFound () {
   read -n1 -p "Have you cloned project airwallex-deployments: (Y/n):" clonedAnswer
-  case $clonedAnswer in 
-  Y | y | "") 
+  case $clonedAnswer in
+  Y | y | "")
         ProjectCloned;;
-  N | n) 
-        ProjectNotCloned;; 
-  *) 
+  N | n)
+        ProjectNotCloned;;
+  *)
       echo "\nerror choice, choose again"
       NoPathFound;;
-  esac 
+  esac
 }
 
 RunProxy () {
@@ -47,12 +47,15 @@ RunProxy () {
 
 
   pwdPath=`pwd`
-  filepath=`dirname $0`
-  path=${pwdPath}/${filepath:2}
+  filepath="node_modules/@meatpie/node-bin/bin"
+  echo "aaa$pwdPath"
+  echo "bbb$filepath"
+
+  path=${pwdPath}/${filepath}
   echo $path
   # echo "Path to $(basename $0) is $(pwd)/$(dirname $0)"
   # cd ${AWX_DEPLOYMENT_PATH}
-  # nohup ./awx proxy postgres, 
+  # nohup ./awx proxy postgres,
   osascript -e 'tell app "Terminal"
     do script "'${path}'/awxProxy.sh"
   end tell'
