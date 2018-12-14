@@ -1,0 +1,19 @@
+getServiceWorkspace () {
+  serviceName=`pwd`
+  echo $serviceName
+}
+
+testService () {
+  cd $serviceName/service
+  yarn test
+  if [ $? != 0 ]
+  then
+    echo 'Unit test failed'
+    exit 1
+  fi
+}
+
+getServiceWorkspace
+testService
+echo 'Unit test succeed'
+
