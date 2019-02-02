@@ -2,27 +2,25 @@
 
 /* eslint no-unused-expressions: "off" */
 
-const yargs = require('yargs');
-const path = require('path');
-// const { exec } = require('child_process');
+const yargs = require('yargs')
 
-const { version } = require('../package.json');
+const { version } = require('../package.json')
 
 yargs
   .version(version)
-  .command('dev', 'Run the dev server', (argv) => {
-    require('../lib/dev')(argv);
+  .command('local', 'Run local server', (argv) => {
+    require('../lib/binScript/local')(argv)
   })
   .command('debug', 'Debug node server', (argv) => {
-    require('../lib/debug')(argv)
+    require('../lib/binScript/debug')(argv)
   })
   .command('start', 'Start the server', (argv) => {
-    require('../lib/start')(argv);
+    require('../lib/binScript/start')(argv);
   })
-  .command('featureDev', 'debug node server for feature developer', (argv) => {
-    require('../lib/featureDev')(argv);
-  })
-  .command('prepareFeatureDev', 'debug node server for feature developer', (argv) => {
-    require('../lib/prepareFeature')(argv);
-  })
+  // .command('featureDev', 'debug node server for feature developer', (argv) => {
+  //   require('../lib/featureDev')(argv);
+  // })
+  // .command('prepareFeatureDev', 'debug node server for feature developer', (argv) => {
+  //   require('../lib/prepareFeature')(argv);
+  // })
   .argv;
