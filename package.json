@@ -10,7 +10,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "postinstall": "npmScript/postInstall.js",
+    "_postinstall": "node npmScript/postInstall",
+    "postinstall": "npm run _postinstall",
     "test": "jest --no-cache",
     "tw": "jest --watch",
     "tc": "jest --coverage"
